@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robert Miller — Paid Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0E0E0E;
+      --white: #F7F6F2;
+      --mid: #6B6B6B;
+      --accent: #2EE89B;
+      --card: #161616;
+      --border: #272727;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      background: rgba(14,14,14,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .hero-name {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(56px, 9vw, 120px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -3px;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+    .hero-name span { color: var(--accent); }
+    .hero-bio {
+      max-width: 560px;
+      font-size: 17px;
+      font-weight: 300;
+      color: #A0A0A0;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      color: var(--mid);
+    }
+    .tag.active {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      color: var(--black);
+      background: var(--accent);
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.85; }
+    .hero-scroll {
+      position: absolute;
+      right: 48px;
+      bottom: 80px;
+      writing-mode: vertical-rl;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    /* SECTIONS */
+    section { padding: 100px 48px; border-top: 1px solid var(--border); }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .section-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: #A0A0A0;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 64px;
+      align-items: start;
+    }
+    .about-text p {
+      font-size: 16px;
+      font-weight: 300;
+      color: #A0A0A0;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-text p strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+    .cert-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 8px;
+    }
+    .cert-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .cert-issuer { font-size: 13px; color: var(--mid); }
+    .cert-badge {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    /* CASE STUDY */
+    .case-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .case-meta {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .meta-item { }
+    .meta-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 6px;
+    }
+    .meta-value {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--white);
+    }
+
+    /* PHASE CARDS */
+    .phases { display: flex; flex-direction: column; gap: 2px; }
+    .phase-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .phase-header {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: center;
+      gap: 32px;
+      padding: 32px 40px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .phase-header:hover { background: #1a1a1a; }
+    .phase-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--border);
+      line-height: 1;
+    }
+    .phase-card.active .phase-number { color: var(--accent); }
+    .phase-title-wrap { }
+    .phase-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 6px;
+    }
+    .phase-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--white);
+    }
+    .phase-status {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+    .status-complete { background: #1a2e24; color: var(--accent); border: 1px solid #2a4a38; }
+    .status-pending { background: #1e1e14; color: #C8B84A; border: 1px solid #3a3820; }
+
+    .phase-body {
+      padding: 0 40px 40px;
+      display: none;
+    }
+    .phase-card.active .phase-body { display: block; }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 8px;
+    }
+    .phase-section-title {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .phase-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: #A0A0A0;
+      line-height: 1.8;
+    }
+    .phase-text strong { color: var(--white); font-weight: 500; }
+
+    /* STATS */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 32px;
+    }
+    .stat {
+      background: var(--card);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-value {
+      font-family: 'Syne', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-value.accent { color: var(--accent); }
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    /* LEARNING CALLOUT */
+    .learning {
+      margin-top: 32px;
+      padding: 24px;
+      border-left: 2px solid var(--accent);
+      background: #0f1a14;
+      border-radius: 0 8px 8px 0;
+    }
+    .learning-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .learning p {
+      font-size: 14px;
+      font-weight: 300;
+      color: #A0A0A0;
+      line-height: 1.7;
+    }
+    .learning p strong { color: var(--white); font-weight: 500; }
+
+    /* METHODOLOGY */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 64px;
+    }
+    .method-card {
+      background: var(--card);
+      padding: 36px 32px;
+    }
+    .method-icon {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .method-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .method-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: #808080;
+      line-height: 1.7;
+    }
+
+    /* CONTACT */
+    .contact-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .contact-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .contact-link {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .contact-link:hover { color: var(--white); border-color: var(--white); }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer p { font-size: 12px; color: var(--mid); }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 40px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero { padding: 0 24px 64px; }
+      section { padding: 72px 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .phase-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .method-grid { grid-template-columns: 1fr; }
+      .case-header { grid-template-columns: 1fr; }
+      .contact-inner { flex-direction: column; align-items: flex-start; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+      .phase-header { grid-template-columns: 48px 1fr; gap: 16px; padding: 24px; }
+      .phase-status { display: none; }
+      .hero-scroll { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">RM</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Case Study</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Paid Media · Google Ads · Seattle, WA</p>
+    <h1 class="hero-name">Robert<br>Miller<span>.</span></h1>
+    <p class="hero-bio">
+      I started by growing an NBA analytics page and got hooked on what the numbers actually mean. Now I build and optimize paid search campaigns for local service businesses — turning ad spend into trackable, measurable leads.
+    </p>
+    <div class="hero-tags">
+      <span class="tag active">Google Ads Certified</span>
+      <span class="tag">Lead Generation</span>
+      <span class="tag">Landing Page Strategy</span>
+      <span class="tag">GTM & Conversion Tracking</span>
+      <span class="tag">Local Service Campaigns</span>
+    </div>
+    <a href="#work" class="hero-cta">View Case Study →</a>
+    <span class="hero-scroll">Scroll to explore</span>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-eyebrow">Background</p>
+    <h2 class="section-title">Analytical by nature,<br>creative by instinct.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          My path into paid media started with content, not campaigns. I ran an <strong>NBA analytics page</strong> where I learned that the numbers behind what people engage with matter as much as the content itself — that instinct for data stuck.
+        </p>
+        <p>
+          I gravitated toward Google Ads because it sits at the intersection of creative thinking and hard data. Writing ad copy that earns a click and then building the landing page that converts it — that full-funnel ownership is what I find most compelling about the work.
+        </p>
+        <p>
+          I focus on <strong>local service businesses</strong>: the kind of companies where a well-run campaign directly impacts real revenue, and where being efficient with a small budget matters more than it does at scale.
+        </p>
+      </div>
+      <div>
+        <div class="cert-card">
+          <p class="cert-label">Certification</p>
+          <p class="cert-title">Google Ads Search</p>
+          <p class="cert-issuer">Google — Skillshop</p>
+          <span class="cert-badge">✓ Verified</span>
+        </div>
+        <div class="cert-card">
+          <p class="cert-label">Specialization</p>
+          <p class="cert-title">Local Lead Generation</p>
+          <p class="cert-issuer">Service Business Campaigns</p>
+        </div>
+        <div class="cert-card">
+          <p class="cert-label">Tools</p>
+          <p class="cert-title">Google Ads · GTM · GA4</p>
+          <p class="cert-issuer">Webflow · Carrd · Search Console</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY -->
+  <section id="work">
+    <p class="section-eyebrow">Case Study</p>
+    <h2 class="section-title">Pristine Rides —<br>Lead Gen Campaign</h2>
+    <p class="section-sub">
+      Pristine Rides is a mobile detailing marketplace that connects Seattle-area customers with trusted local detailers. I built and ran the Google Ads lead generation campaign from the ground up — managing everything from campaign structure to landing page design and conversion tracking.
+    </p>
+
+    <div class="case-meta" style="margin-top: 40px;">
+      <div class="meta-item">
+        <p class="meta-label">Industry</p>
+        <p class="meta-value">Mobile Detailing / Marketplace</p>
+      </div>
+      <div class="meta-item">
+        <p class="meta-label">Channel</p>
+        <p class="meta-value">Google Search Ads</p>
+      </div>
+      <div class="meta-item">
+        <p class="meta-label">Location</p>
+        <p class="meta-value">Seattle, WA</p>
+      </div>
+      <div class="meta-item">
+        <p class="meta-label">Started</p>
+        <p class="meta-value">April 2024</p>
+      </div>
+      <div class="meta-item">
+        <p class="meta-label">Role</p>
+        <p class="meta-value">Sole Campaign Manager</p>
+      </div>
+    </div>
+
+    <div class="divider" style="margin-top: 48px;"></div>
+
+    <!-- PHASES -->
+    <div class="phases">
+
+      <!-- PHASE 1 -->
+      <div class="phase-card active" id="phase1">
+        <div class="phase-header" onclick="togglePhase('phase1')">
+          <span class="phase-number">01</span>
+          <div class="phase-title-wrap">
+            <p class="phase-label">Phase One</p>
+            <p class="phase-title">Launch — Establishing the Baseline</p>
+          </div>
+          <span class="phase-status status-complete">Complete</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-grid">
+            <div>
+              <p class="phase-section-title">What I Did</p>
+              <p class="phase-text">
+                Built and launched the first Google Search campaign targeting local mobile detailing searches in Seattle. The landing page was a <strong>funnel-style page built on Carrd</strong>, designed to move visitors quickly toward a lead form. Daily budget was set at <strong>$4/day</strong> to test campaign viability before scaling.
+              </p>
+              <p class="phase-text" style="margin-top: 16px;">
+                I structured the campaign around high-intent local keywords and wrote ad copy focused on convenience and trust — the two things someone searching for a mobile detailer cares about most.
+              </p>
+            </div>
+            <div>
+              <p class="phase-section-title">Results</p>
+              <p class="phase-text">
+                The campaign ran to <strong>$110 total spend</strong> and generated early signals on click-through rate and lead volume. Full conversion tracking couldn't be configured on Carrd due to platform limitations around separate page URLs — a gap I identified and prioritized fixing for the next phase.
+              </p>
+            </div>
+          </div>
+          <div class="stats-row">
+            <div class="stat">
+              <p class="stat-value">599</p>
+              <p class="stat-label">Impressions</p>
+            </div>
+            <div class="stat">
+              <p class="stat-value">27</p>
+              <p class="stat-label">Clicks</p>
+            </div>
+            <div class="stat">
+              <p class="stat-value accent">4.5%</p>
+              <p class="stat-label">CTR</p>
+            </div>
+            <div class="stat">
+              <p class="stat-value">5</p>
+              <p class="stat-label">Leads (Est.)</p>
+            </div>
+          </div>
+          <div class="learning">
+            <p class="learning-label">Key Learning</p>
+            <p>The campaign proved the concept — people were searching, clicking, and converting. The main constraint was <strong>tracking infrastructure</strong>: Carrd's single-page architecture made GTM-based conversion tracking unreliable. Phase 2 would need to be built on a platform that could support proper event tracking.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="phase-card" id="phase2">
+        <div class="phase-header" onclick="togglePhase('phase2')">
+          <span class="phase-number">02</span>
+          <div class="phase-title-wrap">
+            <p class="phase-label">Phase Two</p>
+            <p class="phase-title">Iteration — Testing a New Approach</p>
+          </div>
+          <span class="phase-status status-complete">Complete</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-grid">
+            <div>
+              <p class="phase-section-title">What I Did</p>
+              <p class="phase-text">
+                Rebuilt the landing page on <strong>Webflow</strong> — a simplified layout with a hero section, lead form, and a "how it works" explainer. Simultaneously updated the ad copy, removing underperforming variants and tightening the messaging. Daily budget was increased to <strong>$12/day</strong> midway through to accelerate data collection.
+              </p>
+            </div>
+            <div>
+              <p class="phase-section-title">Results & Honest Reflection</p>
+              <p class="phase-text">
+                CPL came in at <strong>~$38</strong> — higher than Phase 1 estimates. However, the most important finding from this phase wasn't the number itself: I changed two variables at once (landing page and ad copy), which meant I couldn't isolate which change drove the outcome. A proper test isolates one variable at a time. This is the methodology correction Phase 3 is designed to address.
+              </p>
+            </div>
+          </div>
+          <div class="stats-row">
+            <div class="stat">
+              <p class="stat-value">525</p>
+              <p class="stat-label">Impressions</p>
+            </div>
+            <div class="stat">
+              <p class="stat-value">25</p>
+              <p class="stat-label">Clicks</p>
+            </div>
+            <div class="stat">
+              <p class="stat-value accent">4.8%</p>
+              <p class="stat-label">CTR</p>
+            </div>
+            <div class="stat">
+              <p class="stat-value">~$38</p>
+              <p class="stat-label">CPL</p>
+            </div>
+          </div>
+          <div class="learning">
+            <p class="learning-label">Key Learning</p>
+            <p>The CTR held steady across both phases (~4.5–4.8%), which suggests the <strong>ad copy wasn't the primary variable</strong> affecting performance. The landing page is the more likely driver — but without an isolated test, that's a hypothesis, not a conclusion. Sample size across both phases was also too small to draw statistically significant conclusions. Both of these informed the Phase 3 test design.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="phase-card" id="phase3">
+        <div class="phase-header" onclick="togglePhase('phase3')">
+          <span class="phase-number">03</span>
+          <div class="phase-title-wrap">
+            <p class="phase-label">Phase Three</p>
+            <p class="phase-title">Clean Test — Isolating the Landing Page</p>
+          </div>
+          <span class="phase-status status-pending">In Progress</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-grid">
+            <div>
+              <p class="phase-section-title">The Setup</p>
+              <p class="phase-text">
+                Built a new <strong>funnel-style landing page on Webflow</strong> with GTM conversion tracking verified before launch. This time only one variable is changing — the landing page. Ad copy stays consistent with Phase 2 to create a clean comparison. Budget set at $12/day to maintain comparability with Phase 2.
+              </p>
+            </div>
+            <div>
+              <p class="phase-section-title">Success Criteria</p>
+              <p class="phase-text">
+                Minimum <strong>50–60 clicks</strong> before drawing conclusions. Tracking verified end-to-end before spend begins. Target CPL below Phase 2's $38 baseline — ideally returning to Phase 1's estimated conversion rate of ~18%.
+              </p>
+            </div>
+          </div>
+          <div class="learning" style="background: #1a1a10; border-left-color: #C8B84A;">
+            <p class="learning-label" style="color: #C8B84A;">Why This Matters</p>
+            <p>Phase 3 is the test Phase 2 should have been. <strong>Controlling variables, verifying tracking upfront, and committing to a minimum sample size</strong> before evaluating results — these are the fundamentals of a properly structured paid search test. The infrastructure is built. Now it's about letting the data speak.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section id="methodology">
+    <p class="section-eyebrow">Approach</p>
+    <h2 class="section-title">How I think about<br>paid search.</h2>
+    <p class="section-sub">Running a campaign with a small budget taught me things a big budget can hide — every dollar has to earn its place.</p>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-icon">🎯</div>
+        <p class="method-title">Test one thing at a time</p>
+        <p class="method-text">Changing multiple variables simultaneously makes it impossible to attribute results. I learned this firsthand in Phase 2 and it's now the first principle I apply to any test design.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">📊</div>
+        <p class="method-title">Respect sample size</p>
+        <p class="method-text">Small budgets produce noisy data. I won't draw conclusions from 25 clicks — the numbers need room to stabilize before they mean anything actionable.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">🔧</div>
+        <p class="method-title">Fix tracking before spending</p>
+        <p class="method-text">Phase 1's biggest lesson: unverified tracking means wasted spend. I now verify conversion tags in GTM preview mode before a campaign goes live — every time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div>
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2 class="section-title" style="font-size: clamp(28px, 3vw, 42px);">Open to freelance work<br>and junior roles in Seattle.</h2>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:hello@robertmiller.com" class="contact-link">Email</a>
+        <a href="#" class="contact-link">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2024 Robert Miller</p>
+    <p>Seattle, WA — Open to work</p>
+  </footer>
+
+  <script>
+    function togglePhase(id) {
+      const cards = document.querySelectorAll('.phase-card');
+      cards.forEach(card => {
+        if (card.id === id) {
+          card.classList.toggle('active');
+        } else {
+          card.classList.remove('active');
+        }
+      });
+    }
+
+    // Smooth scroll for nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

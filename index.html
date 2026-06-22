@@ -225,7 +225,7 @@
       border-radius: 100px;
     }
 
-    /* CASE STUDY */
+     /* CASE STUDY */
     .case-header {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -580,10 +580,34 @@
     <p class="section-eyebrow">Case Study</p>
     <h2 class="section-title">Pristine Rides —<br>Lead Gen Campaign</h2>
     <p class="section-sub">
-      Pristine Rides is a mobile detailing marketplace that connects Seattle-area customers with trusted local detailers. I built and ran the Google Ads lead generation campaign from the ground up — managing everything from campaign structure to landing page design and conversion tracking.
+      Pristine Rides is a mobile detailing marketplace connecting Seattle-area customers with trusted local detailers. I built and ran the Google Ads lead generation campaign from the ground up — managing everything from campaign structure to landing page design and conversion tracking.
     </p>
-
-    <div class="case-meta" style="margin-top: 40px;">
+ 
+    <!-- PROJECT OVERVIEW -->
+    <div class="project-overview">
+      <p class="project-overview-label">Project Overview</p>
+      <p class="project-overview-intro">
+        As the <strong>sole campaign manager</strong>, I owned the entire acquisition funnel — from initial account setup through ongoing optimization. This wasn't a managed service or an inherited account. Every decision was mine.
+      </p>
+      <ul class="overview-responsibilities">
+        <li>Google Ads account structure and campaign setup</li>
+        <li>Keyword research and match type strategy</li>
+        <li>Ad copy creation and testing</li>
+        <li>Landing page design and development (Carrd → Webflow)</li>
+        <li>Google Tag Manager implementation and container setup</li>
+        <li>Conversion tracking setup, verification, and debugging</li>
+        <li>Google Search Console configuration and sitemap submission</li>
+        <li>PageSpeed and Core Web Vitals optimization</li>
+        <li>Performance analysis and iterative optimization</li>
+        <li>DNS and domain configuration via Namecheap</li>
+      </ul>
+      <p class="overview-takeaway">
+        <strong>Key takeaway:</strong> Effective paid search isn't just about driving clicks — it's about building a system you can trust to measure, learn from, and improve over time.
+      </p>
+    </div>
+ 
+    <!-- META CARDS -->
+    <div class="case-meta">
       <div class="meta-item">
         <p class="meta-label">Industry</p>
         <p class="meta-value">Mobile Detailing / Marketplace</p>
@@ -602,15 +626,34 @@
       </div>
       <div class="meta-item">
         <p class="meta-label">Role</p>
-        <p class="meta-value">Sole Campaign Manager</p>
+        <p class="meta-value">Paid Search · Landing Pages · Analytics</p>
       </div>
     </div>
-
-    <div class="divider" style="margin-top: 48px;"></div>
-
+ 
+    <!-- SKILLS DEMONSTRATED -->
+    <div class="skills-demonstrated" style="margin-top: 40px;">
+      <p class="skills-label">Skills Demonstrated</p>
+      <div class="skills-tags">
+        <span class="skill-tag">Google Ads Search Campaigns</span>
+        <span class="skill-tag">Keyword Research & Match Type Strategy</span>
+        <span class="skill-tag">Ad Copywriting</span>
+        <span class="skill-tag">Google Tag Manager</span>
+        <span class="skill-tag">Conversion Tracking & Debugging</span>
+        <span class="skill-tag">Google Analytics 4</span>
+        <span class="skill-tag">Webflow Development</span>
+        <span class="skill-tag">Landing Page Optimization</span>
+        <span class="skill-tag">PageSpeed & Core Web Vitals</span>
+        <span class="skill-tag">Test Methodology & Variable Isolation</span>
+        <span class="skill-tag">Lead Generation Strategy</span>
+        <span class="skill-tag">DNS & Domain Configuration</span>
+      </div>
+    </div>
+ 
+    <div class="divider"></div>
+ 
     <!-- PHASES -->
     <div class="phases">
-
+ 
       <!-- PHASE 1 -->
       <div class="phase-card active" id="phase1">
         <div class="phase-header" onclick="togglePhase('phase1')">
@@ -654,9 +697,10 @@
             </div>
             <div class="stat">
               <p class="stat-value">5</p>
-              <p class="stat-label">Leads (Est.)</p>
+              <p class="stat-label">Leads (Manual Count)</p>
             </div>
           </div>
+          <p style="font-size: 12px; color: var(--mid); margin-top: 12px; font-style: italic;">* Tracked manually — no conversion infrastructure was in place during Phase 1. Corrected in Phase 2.</p>
           <div class="learning">
             <p class="learning-label">Key Learning</p>
             <p>The campaign proved the concept — people were searching, clicking, and converting. The main constraint was <strong>tracking infrastructure</strong>: Carrd's single-page architecture made GTM-based conversion tracking unreliable. Phase 2 would need to be built on a platform that could support proper event tracking.</p>
@@ -664,7 +708,7 @@
           <a href="https://prnw.carrd.co/" target="_blank" rel="noopener noreferrer" class="live-link">View Live Page →</a>
         </div>
       </div>
-
+ 
       <!-- PHASE 2 -->
       <div class="phase-card" id="phase2">
         <div class="phase-header" onclick="togglePhase('phase2')">
@@ -680,13 +724,16 @@
             <div>
               <p class="phase-section-title">What I Did</p>
               <p class="phase-text">
-                Rebuilt the landing page on <strong>Webflow</strong> — a simplified layout with a hero section, lead form, and a "how it works" explainer. Simultaneously updated the ad copy, removing underperforming variants and tightening the messaging. Daily budget was increased to <strong>$12/day</strong> midway through to accelerate data collection.
+                Migrated the campaign from Carrd to <strong>Webflow</strong> and implemented end-to-end conversion tracking through GTM and Google Ads — establishing a reliable measurement foundation the campaign had been missing. The new landing page used a simplified layout with a hero section, lead form, and "how it works" explainer.
+              </p>
+              <p class="phase-text" style="margin-top: 16px;">
+                Simultaneously updated ad copy, removing underperforming variants and tightening the messaging. Daily budget was increased to <strong>$12/day</strong> midway through to accelerate data collection.
               </p>
             </div>
             <div>
               <p class="phase-section-title">Results & Honest Reflection</p>
               <p class="phase-text">
-                CPL came in at <strong>~$38</strong> — higher than Phase 1 estimates. However, the most important finding from this phase wasn't the number itself: I changed two variables at once (landing page and ad copy), which meant I couldn't isolate which change drove the outcome. A proper test isolates one variable at a time. This is the methodology correction Phase 3 is designed to address.
+                CPL came in at <strong>~$38</strong>. However, the most important finding from this phase wasn't the number itself: I changed two variables at once — landing page and ad copy — which meant I couldn't isolate which change drove the outcome. A proper test isolates one variable at a time. This is the methodology error Phase 3 was designed to fix.
               </p>
             </div>
           </div>
@@ -710,12 +757,12 @@
           </div>
           <div class="learning">
             <p class="learning-label">Key Learning</p>
-            <p>The CTR held steady across both phases (~4.5–4.8%), which suggests the <strong>ad copy wasn't the primary variable</strong> affecting performance. The landing page is the more likely driver — but without an isolated test, that's a hypothesis, not a conclusion. Sample size across both phases was also too small to draw statistically significant conclusions. Both of these informed the Phase 3 test design.</p>
+            <p>CTR held steady across both phases (~4.5–4.8%), which suggests the <strong>ad copy wasn't the primary variable</strong> affecting performance. The landing page is the more likely driver — but without an isolated test, that's a hypothesis, not a conclusion. Both findings directly shaped the Phase 3 test design.</p>
           </div>
           <a href="https://pristine-rides-nw.webflow.io/" target="_blank" rel="noopener noreferrer" class="live-link">View Live Page →</a>
         </div>
       </div>
-
+ 
       <!-- PHASE 3 -->
       <div class="phase-card" id="phase3">
         <div class="phase-header" onclick="togglePhase('phase3')">
@@ -727,11 +774,15 @@
           <span class="phase-status status-pending">In Progress</span>
         </div>
         <div class="phase-body">
+          <div class="learning" style="background: #1a1a10; border-left-color: #C8B84A; margin-top: 0; margin-bottom: 32px;">
+            <p class="learning-label" style="color: #C8B84A;">The Principle Behind This Phase</p>
+            <p><strong>Control the variables.</strong> Tracking was verified before a single dollar was spent. Ad copy was held constant to match Phase 2. A minimum click threshold was set before any conclusions would be drawn. Phase 3 is the test Phase 2 should have been.</p>
+          </div>
           <div class="phase-grid">
             <div>
               <p class="phase-section-title">The Setup</p>
               <p class="phase-text">
-                Built a new <strong>funnel-style landing page on Webflow</strong> with GTM conversion tracking verified before launch. This time only one variable is changing — the landing page. Ad copy stays consistent with Phase 2 to create a clean comparison. Budget set at $12/day to maintain comparability with Phase 2.
+                Built a new <strong>funnel-style landing page on Webflow</strong> with GTM conversion tracking verified before launch. Only one variable is changing — the landing page. Ad copy stays consistent with Phase 2 to create a clean comparison. Budget held at <strong>$12/day</strong> to maintain comparability.
               </p>
             </div>
             <div>
@@ -741,14 +792,10 @@
               </p>
             </div>
           </div>
-          <div class="learning" style="background: #1a1a10; border-left-color: #C8B84A;">
-            <p class="learning-label" style="color: #C8B84A;">Why This Matters</p>
-            <p>Phase 3 is the test Phase 2 should have been. <strong>Controlling variables, verifying tracking upfront, and committing to a minimum sample size</strong> before evaluating results — these are the fundamentals of a properly structured paid search test. The infrastructure is built. Now it's about letting the data speak.</p>
-          </div>
           <a href="https://www.pristinerides.co/" target="_blank" rel="noopener noreferrer" class="live-link">View Live Page →</a>
         </div>
       </div>
-
+ 
     </div>
   </section>
 

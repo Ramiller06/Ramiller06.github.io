@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     :root {
       --black: #0E0E0E;
       --white: #F7F6F2;
@@ -16,9 +16,9 @@
       --card: #161616;
       --border: #272727;
     }
-
+ 
     html { scroll-behavior: smooth; }
-
+ 
     body {
       background: var(--black);
       color: var(--white);
@@ -27,7 +27,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-
+ 
     /* NAV */
     nav {
       position: fixed;
@@ -60,7 +60,7 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--white); }
-
+ 
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -142,10 +142,10 @@
       text-transform: uppercase;
       color: var(--mid);
     }
-
+ 
     /* SECTIONS */
     section { padding: 100px 48px; border-top: 1px solid var(--border); }
-
+ 
     .section-eyebrow {
       font-size: 11px;
       font-weight: 500;
@@ -170,7 +170,7 @@
       max-width: 600px;
       line-height: 1.7;
     }
-
+ 
     /* ABOUT */
     .about-grid {
       display: grid;
@@ -224,8 +224,8 @@
       padding: 4px 10px;
       border-radius: 100px;
     }
-
-     /* CASE STUDY */
+ 
+    /* CASE STUDY */
     .case-header {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -252,7 +252,92 @@
       font-size: 15px;
       color: var(--white);
     }
-
+ 
+    /* PROJECT OVERVIEW BLOCK */
+    .project-overview {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 40px;
+      margin-top: 48px;
+      margin-bottom: 48px;
+    }
+    .project-overview-label {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .project-overview-intro {
+      font-size: 16px;
+      font-weight: 300;
+      color: #A0A0A0;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      max-width: 760px;
+    }
+    .project-overview-intro strong { color: var(--white); font-weight: 500; }
+    .overview-responsibilities {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 40px;
+      margin-bottom: 28px;
+    }
+    .overview-responsibilities li {
+      font-size: 14px;
+      font-weight: 300;
+      color: #A0A0A0;
+      line-height: 1.7;
+      list-style: none;
+      padding-left: 16px;
+      position: relative;
+    }
+    .overview-responsibilities li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 12px;
+    }
+    .overview-takeaway {
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--mid);
+      font-style: italic;
+      line-height: 1.7;
+    }
+    .overview-takeaway strong { color: var(--white); font-style: normal; font-weight: 500; }
+ 
+    /* SKILLS DEMONSTRATED */
+    .skills-demonstrated {
+      margin-bottom: 48px;
+    }
+    .skills-label {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--white);
+      background: var(--card);
+    }
+ 
     /* PHASE CARDS */
     .phases { display: flex; flex-direction: column; gap: 2px; }
     .phase-card {
@@ -303,13 +388,13 @@
     }
     .status-complete { background: #1a2e24; color: var(--accent); border: 1px solid #2a4a38; }
     .status-pending { background: #1e1e14; color: #C8B84A; border: 1px solid #3a3820; }
-
+ 
     .phase-body {
       padding: 0 40px 40px;
       display: none;
     }
     .phase-card.active .phase-body { display: block; }
-
+ 
     .phase-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -332,7 +417,7 @@
       line-height: 1.8;
     }
     .phase-text strong { color: var(--white); font-weight: 500; }
-
+ 
     /* STATS */
     .stats-row {
       display: grid;
@@ -364,7 +449,7 @@
       text-transform: uppercase;
       color: var(--mid);
     }
-
+ 
     /* LEARNING CALLOUT */
     .learning {
       margin-top: 32px;
@@ -387,7 +472,7 @@
       line-height: 1.7;
     }
     .learning p strong { color: var(--white); font-weight: 500; }
-
+ 
     /* METHODOLOGY */
     .method-grid {
       display: grid;
@@ -420,7 +505,7 @@
       color: #808080;
       line-height: 1.7;
     }
-
+ 
     /* CONTACT */
     .contact-inner {
       display: flex;
@@ -447,23 +532,23 @@
     }
     .contact-link:hover { color: var(--white); border-color: var(--white); }
     .live-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 24px;
-  font-family: 'Syne', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: var(--accent);
-  text-decoration: none;
-  border: 1px solid var(--accent);
-  padding: 10px 18px;
-  border-radius: 4px;
-  transition: background 0.2s, color 0.2s;
-}
-.live-link:hover { background: var(--accent); color: var(--black); }
-
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 10px 18px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .live-link:hover { background: var(--accent); color: var(--black); }
+ 
     /* FOOTER */
     footer {
       padding: 32px 48px;
@@ -473,14 +558,14 @@
       align-items: center;
     }
     footer p { font-size: 12px; color: var(--mid); }
-
+ 
     /* DIVIDER */
     .divider {
       height: 1px;
       background: var(--border);
       margin: 40px 0;
     }
-
+ 
     @media (max-width: 768px) {
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
@@ -496,11 +581,13 @@
       .phase-header { grid-template-columns: 48px 1fr; gap: 16px; padding: 24px; }
       .phase-status { display: none; }
       .hero-scroll { display: none; }
+      .overview-responsibilities { grid-template-columns: 1fr; }
+      .project-overview { padding: 28px 24px; }
     }
   </style>
 </head>
 <body>
-
+  
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">RAM</a>

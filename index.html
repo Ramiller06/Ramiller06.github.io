@@ -773,6 +773,40 @@
     </div>
   </section>
 
+   <!-- CHALLENGES -->
+  <section id="challenges">
+    <p class="section-eyebrow">Challenges</p>
+    <h2 class="section-title">What went wrong<br>and what I did about it.</h2>
+    <p class="section-sub">The most valuable lessons from this campaign didn't come from the wins — they came from diagnosing the problems.</p>
+    <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 64px;">
+ 
+      <div class="cert-card">
+        <p class="cert-label">Challenge 01</p>
+        <p class="cert-title" style="margin-bottom: 12px;">Tracking limitations derailed Phase 1 data collection</p>
+        <p style="font-size: 15px; font-weight: 300; color: #A0A0A0; line-height: 1.8;">The landing page was built on Carrd, which uses a single-page architecture. Without a separate thank you page URL, GTM couldn't fire a conversion event on form submission. I didn't catch this until Phase 1 was already underway. The fix was rebuilding the landing page on Webflow for Phase 2 — a platform that supported proper GTM implementation and thank you page tracking.</p>
+      </div>
+ 
+      <div class="cert-card">
+        <p class="cert-label">Challenge 02</p>
+        <p class="cert-title" style="margin-bottom: 12px;">Phase 2 had a flawed test design</p>
+        <p style="font-size: 15px; font-weight: 300; color: #A0A0A0; line-height: 1.8;">I changed two variables simultaneously — the landing page layout and the ad copy. When Phase 2 performed worse than Phase 1, I couldn't isolate which change caused the drop. I identified this as a methodology error mid-phase and used it to redesign Phase 3: one variable at a time, tracking verified before launch, minimum click threshold before drawing conclusions.</p>
+      </div>
+ 
+      <div class="cert-card">
+        <p class="cert-label">Challenge 03</p>
+        <p class="cert-title" style="margin-bottom: 12px;">A pre-existing Quality Score problem surfaced mid-Phase 3</p>
+        <p style="font-size: 15px; font-weight: 300; color: #A0A0A0; line-height: 1.8;">After adding Quality Score columns to my keyword view, I discovered several core keywords had historical scores of 1-2/10 — likely dating back to Phase 1. Low Quality Scores meant low Ad Rank, which meant limited impression share across all three phases. I identified two contributing factors: landing page copy that signaled a marketplace model rather than a direct service, and keyword history that couldn't be reversed mid-campaign. This informed the decision to start fresh keywords in Phase 4 rather than trying to rehabilitate suppressed ones.</p>
+      </div>
+ 
+      <div class="cert-card">
+        <p class="cert-label">Challenge 04</p>
+        <p class="cert-title" style="margin-bottom: 12px;">Real detailer feedback revealed a lead quality gap</p>
+        <p style="font-size: 15px; font-weight: 300; color: #A0A0A0; line-height: 1.8;">After connecting detailers with leads, I followed up to ask what additional information would make leads more actionable. The feedback: timeframe. A customer interested in detailing "in a couple of months" requires a completely different follow-up than someone ready to book this week. I added a timeframe field to the form mid-Phase 3 — a small operational change that directly improved lead usefulness without affecting the core test variables.</p>
+      </div>
+ 
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-inner">

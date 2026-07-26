@@ -742,7 +742,7 @@
     <div class="phases">
  
       <!-- PHASE 1 -->
-      <div class="phase-card active" id="phase1">
+    <div class="phase-card active" id="phase1">
         <div class="phase-header" onclick="togglePhase('phase1')">
           <span class="phase-number">01</span>
           <div class="phase-title-wrap">
@@ -787,7 +787,15 @@
               <p class="stat-label">Leads (Manual Count)</p>
             </div>
           </div>
+          <div class="phase-image-wrap">
+            <img src="images/phase1-dashboard.png" alt="Google Ads dashboard showing Phase 1 impressions and clicks, Apr 14 - May 12 2026" class="phase-image">
+            <p class="phase-image-caption">Google Ads dashboard, Phase 1 date range (Apr 14 – May 12, 2026).</p>
+          </div>
           <p style="font-size: 12px; color: var(--mid); margin-top: 12px; font-style: italic;">* Tracked manually — no conversion infrastructure was in place during Phase 1. Corrected in Phase 2.</p>
+          <div class="phase-image-wrap">
+            <img src="images/phase1-carrd.png" alt="Pristine Rides Carrd landing page, Phase 1" class="phase-image">
+            <p class="phase-image-caption">The Phase 1 Carrd landing page — funnel-style, single scroll to the "Get My Free Quote" CTA.</p>
+          </div>
           <div class="learning">
             <p class="learning-label">Key Learning</p>
             <p>The campaign proved the concept — people were searching, clicking, and converting. The main constraint was <strong>tracking infrastructure</strong>: Carrd's single-page architecture made GTM-based conversion tracking unreliable. Phase 2 would need to be built on a platform that could support proper event tracking.</p>
@@ -795,7 +803,7 @@
           <a href="https://prnw.carrd.co/" target="_blank" rel="noopener noreferrer" class="live-link">View Live Page →</a>
         </div>
       </div>
- 
+      
       <!-- PHASE 2 -->
       <div class="phase-card" id="phase2">
         <div class="phase-header" onclick="togglePhase('phase2')">
@@ -811,7 +819,7 @@
             <div>
               <p class="phase-section-title">What I Did</p>
               <p class="phase-text">
-                Migrated the campaign from Carrd to <strong>Webflow</strong> and implemented end-to-end conversion tracking through GTM and Google Ads — establishing a reliable measurement foundation the campaign had been missing. The new landing page used a simplified layout with a hero section, lead form, and "how it works" explainer.
+                Migrated the campaign from Carrd to <strong>Webflow</strong> and implemented end-to-end conversion tracking through GTM and Google Ads — establishing a reliable measurement foundation the campaign had been missing. Also added <strong>Microsoft Clarity</strong> to begin layering qualitative session data — heatmaps and recordings — on top of the quantitative tracking. The new landing page used a simplified layout with a hero section, lead form, and "how it works" explainer.
               </p>
               <p class="phase-text" style="margin-top: 16px;">
                 Simultaneously updated ad copy, removing underperforming variants and tightening the messaging. Daily budget was increased to <strong>$12/day</strong> midway through to accelerate data collection.
@@ -820,45 +828,63 @@
             <div>
               <p class="phase-section-title">Results & Honest Reflection</p>
               <p class="phase-text">
-                CPL came in at <strong>~$38</strong>. However, the most important finding from this phase wasn't the number itself: I changed two variables at once — landing page and ad copy — which meant I couldn't isolate which change drove the outcome. A proper test isolates one variable at a time. This is the methodology error Phase 3 was designed to fix.
+                CPL came in at <strong>~$40</strong>. However, the most important finding from this phase wasn't the number itself: I changed two variables at once — landing page and ad copy — which meant I couldn't isolate which change drove the outcome. A proper test isolates one variable at a time. This is the methodology error Phase 3 was designed to fix.
               </p>
             </div>
           </div>
           <div class="stats-row">
             <div class="stat">
-              <p class="stat-value">525</p>
+              <p class="stat-value">556</p>
               <p class="stat-label">Impressions</p>
             </div>
             <div class="stat">
-              <p class="stat-value">25</p>
+              <p class="stat-value">26</p>
               <p class="stat-label">Clicks</p>
             </div>
             <div class="stat">
-              <p class="stat-value accent">4.8%</p>
+              <p class="stat-value accent">4.7%</p>
               <p class="stat-label">CTR</p>
             </div>
             <div class="stat">
-              <p class="stat-value">~$38</p>
+              <p class="stat-value">~$40</p>
               <p class="stat-label">CPL</p>
             </div>
           </div>
+          <div class="phase-image-wrap">
+            <img src="images/phase2-dashboard.png" alt="Google Ads dashboard showing Phase 2 impressions and clicks, May 21 - Jun 10 2026" class="phase-image">
+            <p class="phase-image-caption">Google Ads dashboard, Phase 2 date range (May 21 – Jun 10, 2026).</p>
+          </div>
           <div class="learning">
             <p class="learning-label">Key Learning</p>
-            <p>CTR held steady across both phases (~4.5–4.8%), which suggests the <strong>ad copy wasn't the primary variable</strong> affecting performance. The landing page is the more likely driver — but without an isolated test, that's a hypothesis, not a conclusion. Both findings directly shaped the Phase 3 test design.</p>
+            <p>CTR held steady across both phases (~4.5–4.7%), which suggests the <strong>ad copy wasn't the primary variable</strong> affecting performance. The landing page is the more likely driver — but without an isolated test, that's a hypothesis, not a conclusion. Both findings directly shaped the Phase 3 test design.</p>
+          </div>
+          <div class="phase-image-row">
+            <div class="phase-image-wrap" style="margin-top: 0;">
+              <img src="images/phase2-webflow-landing.png" alt="Pristine Rides Phase 2 Webflow landing page hero and lead form" class="phase-image">
+              <p class="phase-image-caption">The Phase 2 Webflow landing page — hero, lead form, and "how it works" explainer.</p>
+            </div>
+            <div class="phase-image-wrap" style="margin-top: 0;">
+              <img src="images/phase2-gtm-debug.png" alt="Google Tag Manager preview mode showing conversion tags firing on pristinerides.co" class="phase-image">
+              <p class="phase-image-caption">GTM preview mode verifying the Gtag, Google Ads conversion tag, and Conversion Linker all fire correctly.</p>
+            </div>
+          </div>
+          <div class="phase-image-wrap">
+            <img src="images/phase2-how-it-works.png" alt="Pristine Rides Phase 2 How It Works section" class="phase-image">
+            <p class="phase-image-caption">The "How It Works" explainer added to build trust and set expectations before the lead form.</p>
           </div>
           <a href="https://pristine-rides-nw.webflow.io/" target="_blank" rel="noopener noreferrer" class="live-link">View Live Page →</a>
         </div>
       </div>
  
       <!-- PHASE 3 -->
-      <div class="phase-card" id="phase3">
+     <div class="phase-card" id="phase3">
         <div class="phase-header" onclick="togglePhase('phase3')">
           <span class="phase-number">03</span>
           <div class="phase-title-wrap">
             <p class="phase-label">Phase Three</p>
             <p class="phase-title">Clean Test — Isolating the Landing Page</p>
           </div>
-          <span class="phase-status status-pending">In Progress</span>
+          <span class="phase-status status-complete">Complete</span>
         </div>
         <div class="phase-body">
           <div class="learning" style="background: #1a1a10; border-left-color: #C8B84A; margin-top: 0; margin-bottom: 32px;">
@@ -873,10 +899,46 @@
               </p>
             </div>
             <div>
-              <p class="phase-section-title">Success Criteria</p>
+              <p class="phase-section-title">Results</p>
               <p class="phase-text">
-                Minimum <strong>50–60 clicks</strong> before drawing conclusions. Tracking verified end-to-end before spend begins. Target CPL below Phase 2's $38 baseline — ideally returning to Phase 1's estimated conversion rate of ~18%.
+                The isolated landing page test hit its click threshold, and CTR climbed to <strong>5.5%</strong> — the highest of all three phases — confirming the landing page as the primary driver Phase 2 could only hypothesize about. But an unresolved historical issue surfaced alongside it: Quality Scores of 1–2/10 on core "near me" keywords capped Ad Rank and impression share for the entire test, regardless of landing page quality.
               </p>
+            </div>
+          </div>
+          <div class="stats-row">
+            <div class="stat">
+              <p class="stat-value">934</p>
+              <p class="stat-label">Impressions</p>
+            </div>
+            <div class="stat">
+              <p class="stat-value">51</p>
+              <p class="stat-label">Clicks</p>
+            </div>
+            <div class="stat">
+              <p class="stat-value accent">5.5%</p>
+              <p class="stat-label">CTR</p>
+            </div>
+            <div class="stat">
+              <p class="stat-value accent">5.9%</p>
+              <p class="stat-label">CVR</p>
+            </div>
+          </div>
+          <div class="phase-image-wrap">
+            <img src="images/phase3-dashboard.png" alt="Google Ads dashboard showing Phase 3 impressions and clicks, Jun 12 - Jul 3 2026" class="phase-image">
+            <p class="phase-image-caption">Google Ads dashboard, Phase 3 date range (Jun 12 – Jul 3, 2026).</p>
+          </div>
+          <div class="learning">
+            <p class="learning-label">Key Learning</p>
+            <p>Isolating the landing page as the single variable worked exactly as intended — the CTR improvement confirmed it was the right lever, resolving the ambiguity Phase 2 left open. But Quality Score on "near me" keywords never recovered, even after positioning and copy fixes. All three phases ran under the <strong>same campaign</strong>, so Quality Score history carried forward rather than resetting — a landing page change can improve relevance signals, but it can't erase an account-level score built on prior performance. A true test of the positioning fix would have required a fresh campaign from the start, a structural constraint I identified too late to correct within this project.</p>
+          </div>
+          <div class="phase-image-row">
+            <div class="phase-image-wrap" style="margin-top: 0;">
+              <img src="images/phase3-quality-score.png" alt="Google Ads keyword table showing Quality Scores of 1-2 out of 10 on core near me keywords" class="phase-image">
+              <p class="phase-image-caption">Quality Score column added to the keyword view — core "near me" terms scoring 1–2/10.</p>
+            </div>
+            <div class="phase-image-wrap" style="margin-top: 0;">
+              <img src="images/phase3-pagespeed.png" alt="PageSpeed Insights mobile scores for pristinerides.co" class="phase-image">
+              <p class="phase-image-caption">Current PageSpeed Insights scores for pristinerides.co following image compression and load time fixes.</p>
             </div>
           </div>
           <a href="https://www.pristinerides.co/" target="_blank" rel="noopener noreferrer" class="live-link">View Live Page →</a>

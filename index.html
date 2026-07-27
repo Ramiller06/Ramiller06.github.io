@@ -1086,6 +1086,13 @@
           card.classList.remove('active');
         }
       });
+
+      const target = document.getElementById(id);
+      if (target.classList.contains('active')) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+      }
     }
 
     // Smooth scroll for nav
